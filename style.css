@@ -1,0 +1,691 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* offset untuk semua anchor scroll */
+}
+
+/* ================= HAMBURGER MENU ================= */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  nav {
+    position: absolute;
+    top: 100%; /* letakkan tepat di bawah header */
+    left: 0;
+    right: 0;
+    background: #000;
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+
+    max-height: 0; /* awalnya tertutup */
+    transition: max-height 0.4s ease; /* animasi slide */
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* buka hingga hampir penuh layar (sisakan ruang untuk header) */
+  nav.show {
+    max-height: calc(100vh - 100px);
+  }
+}
+
+body {
+  background: #000;
+  color: #fff;
+}
+
+/* ================= NAVBAR ================= */
+header {
+  width: 100%;
+  padding: 20px 80px;
+  background: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;   /* ini yang bikin nempel */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+body {
+  padding-top: 100px; /* sesuaikan tinggi header */
+}
+
+header {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: rgb(255, 217, 0);
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+  background: linear-gradient(135deg, #171716, #171716);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 55px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: #ffc001;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #171716;
+}
+
+/* ================= IMAGE ================= */
+.hero-image img {
+  width: 450px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Efek kilau */
+.shoe-effect {
+  position: relative;
+  display: inline-block;
+}
+
+.shoe-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.7), transparent);
+  transform: skewX(-20deg);
+  opacity: 0;
+}
+
+.shoe-effect.shine-active::after {
+  animation: shine-move 2s ease-in-out 1;
+  opacity: 1;
+}
+
+@keyframes shine-move {
+  0% { left: -100%; opacity: 0; }
+  20% { opacity: 1; }
+  50% { left: 100%; opacity: 1; }
+  100% { left: 100%; opacity: 0; }
+}
+
+/* Bubble effect */
+.bubbles {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translateX(-50%);
+  pointer-events: none;
+  display: none; /* default hidden */
+}
+
+.bubbles span {
+  position: absolute;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  animation: bubbleUp 4s ease-in infinite;
+}
+
+.bubbles span:nth-child(1) { left: 20px; animation-delay: 0s; }
+.bubbles span:nth-child(2) { left: 60px; animation-delay: 1s; }
+.bubbles span:nth-child(3) { left: 100px; animation-delay: 2s; }
+.bubbles span:nth-child(4) { left: 140px; animation-delay: 1.5s; }
+.bubbles span:nth-child(5) { left: 180px; animation-delay: 0.5s; }
+
+@keyframes bubbleUp {
+  0% { transform: translateY(0) scale(1); opacity: 0.8; }
+  50% { transform: translateY(-100px) scale(1.2); opacity: 0.5; }
+  100% { transform: translateY(-200px) scale(0.8); opacity: 0; }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  /* lebih lebar dan sedikit diangkat agar sepatu terlihat lebih menonjol di layar kecil */
+  .hero-image img {
+    width: 70vw;
+    max-width: 340px;
+    margin-top: -20px;
+    margin-bottom: 10px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  /* Pastikan daftar navigasi terlihat saat menu dibuka */
+  nav.show ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* ================= PRICE SECTION ================= */
+
+.price {
+  padding: 80px 80px;
+  background: #111;
+  text-align: center;
+}
+
+.price h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #f5c842;
+}
+
+.price-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.price-card {
+  background: #1a1a1a;
+  padding: 40px 30px;
+  width: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+  border: 1px solid #222;
+}
+
+.price-card:hover {
+  transform: translateY(-10px);
+  border-color: #f5c842;
+}
+
+.price-card h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.price-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #f5c842;
+}
+
+.price-card ul {
+  list-style: none;
+  margin-bottom: 25px;
+}
+
+.price-card ul li {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.btn-price {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ffc001;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn-price:hover {
+  background: #171716;
+}
+
+/* Highlight Card */
+.popular {
+  border: 2px solid #f5c842;
+}
+
+/* ================= MODAL ================= */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; /* lebih tinggi dari header */
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.8);
+  overflow: auto;
+}
+
+.modal-content {
+  margin: 80px auto; /* jarak dari header */
+  display: block;
+  max-width: 90%;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+}
+
+.close {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10000; /* pastikan di atas header */
+}
+
+.close:hover {
+  color: #f5c842;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about {
+  padding: 80px 80px;
+  background: #171716;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-image img {
+  width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+.about-text {
+  max-width: 600px;
+  color: #ddd;
+}
+
+.about-text h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: #f5c842;
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 300px;
+    margin-bottom: 30px;
+  }
+}
+
+/* ================= WHY CHOOSE ================= */
+.why-choose {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.why-choose h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #f5c842;
+}
+
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+}
+
+.why-choose ul li {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: #ddd;
+}
+
+.why-choose ul li strong {
+  color: #fff;
+}
+
+/* ================= CONTACT SECTION ================= */
+.contact {
+  padding: 80px 80px;
+  background: #111;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 40px;
+  margin-bottom: 40px;
+  color: #f5c842;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.3s;
+  border: 1px solid #222;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.contact-link i {
+  font-size: 20px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-link:hover {
+  background: #ffc001;
+  color: #000;
+  border-color: #ffc001;
+}
+
+.contact-link:hover i {
+  transform: scale(1.3) rotate(10deg);
+  color: #000;
+}
+
+/* ================= CONTACT LOCATION ================= */
+.contact-location {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact-location h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #f5c842;
+}
+
+.contact-location p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.map-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+}
+
+/* ================= TESTIMONI SECTION ================= */
+.testimoni {
+  padding: 80px 80px;
+  background: #171716;
+  text-align: center;
+}
+
+.testimoni h2 {
+  font-size: 40px;
+  margin-bottom: 50px;
+  color: #f5c842;
+}
+
+.testimoni-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.testimoni-card {
+  background: #1a1a1a;
+  padding: 30px 25px;
+  border-radius: 10px;
+  border: 1px solid #222;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: 0.3s;
+}
+
+.testimoni-card:hover {
+  transform: translateY(-10px);
+  border-color: #f5c842;
+}
+
+.testimoni-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  border: 2px solid #f5c842;
+}
+
+.testimoni-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.testimoni-card h4 {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ================= FEEDBACK SECTION ================= */
+.feedback {
+  padding: 80px 20px;
+  background: #171716;
+  text-align: center;
+}
+
+.feedback h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #f5c842;
+}
+
+.feedback p {
+  color: #ddd;
+  margin-bottom: 40px;
+}
+
+.feedback-form {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.form-group label i {
+  margin-right: 8px;
+  color: #f5c842;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #f5c842;
+  outline: none;
+}
+
+.btn-feedback {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #f5c842;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-feedback i {
+  margin-right: 8px;
+}
+
+.btn-feedback:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: #000;
+  padding: 30px 80px;
+  text-align: center;
+  border-top: 1px solid #222;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer p {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #f5c842;
+}
