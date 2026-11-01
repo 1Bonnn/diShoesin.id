@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>diShoesin.id | Premium Care for Shoes, Bags & Helmets</title>
+  <link rel="icon" type="image/png" href="poto/logo.png">
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="home">
+
+  <!-- HEADER & NAVIGATION -->
+  <header>
+    <div class="logo">
+      <img src="poto/back_transparent.png" alt="diShoesin.id Logo">
+    </div>
+
+    <!-- Hamburger Menu Toggle -->
+    <div class="menu-toggle" id="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+
+    <nav id="nav-menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#price">Price</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#testimoni">Testimonial</a></li>
+        <li><a href="#feedback">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero" id="hero-section">
+      <div class="hero-grid">
+        <div class="hero-text reveal-on-scroll">
+          <div class="badge-container">
+            <span class="premium-badge">
+              <span class="pulse-dot"></span>
+              Premium Treatment Service
+            </span>
+          </div>
+          <h1>Bersihkan Sepatu <br><span class="highlight-text">Tanpa Ribet</span></h1>
+          <p>diShoesin.id siap merawat sepatu, tas, dan helm kesayanganmu dengan teknik profesional dan hasil maksimal.</p>
+          <div class="hero-buttons">
+            <a href="https://wa.me/6283168783141" target="_blank" class="btn btn-primary">
+              <i class="fab fa-whatsapp"></i> Order Now
+            </a>
+            <a href="#price" class="btn btn-secondary">See Pricing</a>
+          </div>
+        </div>
+        <div class="hero-image-container reveal-on-scroll" style="transition-delay: 0.15s;">
+          <div class="hero-glow"></div>
+          <div class="hero-glow-secondary"></div>
+          <img src="poto/shoes.png" alt="Sepatu Bersih diShoesin.id" class="shoe-effect">
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICE LIST -->
+    <section class="price" id="price">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Layanan & Tarif</span>
+        <h2>Price List</h2>
+        <p>Perawatan berkualitas tinggi dengan harga ramah di kantong</p>
+      </div>
+
+      <div class="price-container">
+        <!-- Tas -->
+        <div class="price-card reveal-on-scroll" style="transition-delay: 0.05s;">
+          <div class="card-icon"><i class="fas fa-bag-shopping"></i></div>
+          <h3>Cuci Tas</h3>
+          <p class="price-value">Start Rp 20.000</p>
+          <ul class="price-list-items">
+            <li><i class="fas fa-circle-check"></i> Tas Small</li>
+            <li><i class="fas fa-circle-check"></i> Tas Medium</li>
+            <li><i class="fas fa-circle-check"></i> Tas Large</li>
+          </ul>
+          <button class="btn-price" onclick="openModal('poto/pctas.jpeg')">
+            <i class="fas fa-eye"></i> Detail Price
+          </button>
+        </div>
+
+        <!-- Sepatu (Popular) -->
+        <div class="price-card popular reveal-on-scroll" style="transition-delay: 0.15s;">
+          <div class="popular-tag">Best Seller</div>
+          <div class="card-icon"><i class="fas fa-shoe-prints"></i></div>
+          <h3>Cuci Sepatu</h3>
+          <p class="price-value">Start Rp 20.000</p>
+          <ul class="price-list-items">
+            <li><i class="fas fa-circle-check"></i> Fast Clean</li>
+            <li><i class="fas fa-circle-check"></i> Deep Clean</li>
+            <li><i class="fas fa-circle-check"></i> Treatment Lainnya</li>
+          </ul>
+          <button class="btn-price" onclick="openModal('poto/pcsepatu.jpeg')">
+            <i class="fas fa-eye"></i> Detail Price
+          </button>
+        </div>
+
+        <!-- Helm -->
+        <div class="price-card reveal-on-scroll" style="transition-delay: 0.25s;">
+          <div class="card-icon"><i class="fas fa-motorcycle"></i></div>
+          <h3>Cuci Helm</h3>
+          <p class="price-value">Start Rp 20.000</p>
+          <ul class="price-list-items">
+            <li><i class="fas fa-circle-check"></i> Helm Half Face</li>
+            <li><i class="fas fa-circle-check"></i> Helm Full Face</li>
+            <li><i class="fas fa-circle-check"></i> Helm lainnya</li>
+          </ul>
+          <button class="btn-price" onclick="openModal('poto/pchelm.jpeg')">
+            <i class="fas fa-eye"></i> Detail Price
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICE DETAIL MODAL -->
+    <div id="priceModal" class="modal">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div class="modal-wrapper">
+        <img class="modal-content" id="priceImage" alt="Price List Detail">
+      </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+      <div class="about-container">
+        <div class="about-image reveal-on-scroll">
+          <div class="image-overlay-glow"></div>
+          <img src="poto/background.jpeg" alt="Sepatu Bersih diShoesin">
+        </div>
+        <div class="about-text reveal-on-scroll" style="transition-delay: 0.1s;">
+          <span class="section-tag">Tentang Kami</span>
+          <h2>About Us</h2>
+          <p>
+            <strong>diShoesin.id</strong> adalah layanan cuci sepatu, tas, dan dompet yang hadir untuk memberikan perawatan terbaik bagi barang kesayangan Anda. Kami percaya bahwa sepatu, tas, dan dompet bukan hanya sekadar barang, tetapi juga penunjang penampilan dan rasa percaya diri Anda.
+          </p>
+          <p>
+            Beroperasi sebagai jasa cuci profesional, kami melayani pembersihan berbagai jenis bahan seperti canvas, suede, leather, mesh, dan nubuck dengan teknik serta cairan pembersih khusus yang aman.
+          </p>
+
+          <!-- Why Choose Grid -->
+          <div class="why-choose">
+            <h3>Why Choose diShoesin?</h3>
+            <div class="why-grid">
+              <div class="why-item">
+                <div class="why-icon"><i class="fas fa-award"></i></div>
+                <div class="why-content">
+                  <h4>Professional Care</h4>
+                  <p>Ditangani dengan teknik presisi dan produk perawatan berkualitas premium.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-icon"><i class="fas fa-gauge-high"></i></div>
+                <div class="why-content">
+                  <h4>Fast Service</h4>
+                  <p>Pengerjaan efisien dan tepat waktu tanpa mengurangi kualitas kebersihan.</p>
+                </div>
+              </div>
+              <div class="why-item">
+                <div class="why-icon"><i class="fas fa-tags"></i></div>
+                <div class="why-content">
+                  <h4>Affordable Price</h4>
+                  <p>Tarif bersahabat dengan jaminan hasil cuci yang memuaskan dan higienis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Hubungi Kami</span>
+        <h2>Contact Us</h2>
+        <p>Siap melayani kebutuhan pembersihan barang kesayangan Anda</p>
+      </div>
+
+      <div class="contact-container reveal-on-scroll">
+        <a href="https://www.instagram.com/dishoesin.id?utm_source=qr&igsh=MWthcG90ZHF4enhidA==" target="_blank" class="contact-link instagram">
+          <i class="fab fa-instagram"></i> <span>Instagram</span>
+        </a>
+        <a href="https://wa.me/6283168783141" target="_blank" class="contact-link whatsapp">
+          <i class="fab fa-whatsapp"></i> <span>WhatsApp</span>
+        </a>
+        <a href="https://www.tiktok.com/@dishoesin.id?_r=1&_t=ZS-93vqkg8wFSJ" target="_blank" class="contact-link tiktok">
+          <i class="fab fa-tiktok"></i> <span>TikTok</span>
+        </a>
+      </div>
+
+      <!-- Lokasi Map -->
+      <div class="contact-location reveal-on-scroll" style="transition-delay: 0.1s;">
+        <h3>Our Location</h3>
+        <p class="location-name"><i class="fas fa-map-marker-alt"></i> Dilaundry'in Laundry Cikeas</p>
+        <p class="location-desc">Silakan kunjungi offline store kami di lokasi berikut untuk drop-off langsung.</p>
+        <div class="map-container">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.0529901841824!2d106.9366229740275!3d-6.387163462471861!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69954e995e08f3%3A0x5fd6121e0771d6d4!2sDilaundry&#39;in%20Laundry%20Cikeas!5e0!3m2!1sid!2sid!4v1771053205579!5m2!1sid!2sid" 
+            width="100%" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI SECTION -->
+    <section class="testimoni" id="testimoni">
+      <div class="section-header reveal-on-scroll">
+        <span class="section-tag">Testimoni Pelanggan</span>
+        <h2>What They Say</h2>
+        <p>Ulasan jujur dari mereka yang telah mempercayakan perawatannya pada kami</p>
+      </div>
+
+      <div class="testimoni-container">
+        <!-- Card 1 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.05s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Sepatu saya jadi bersih banget, kayak baru lagi. Prosesnya cepat dan hasilnya memuaskan!"</p>
+          <div class="testimoni-user">
+            <img src="poto/dori.jpeg" alt="Foto Ridho">
+            <div class="user-info">
+              <h4>Ridho</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.1s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Pelayanan ramah, harga terjangkau, dan kualitas luar biasa. Highly recommended!"</p>
+          <div class="testimoni-user">
+            <img src="poto/insan.jpeg" alt="Foto Insanul">
+            <div class="user-info">
+              <h4>Insanul</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.15s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Unyellowing service benar-benar bikin midsole sepatu saya putih kembali. Terima kasih diShoesin!"</p>
+          <div class="testimoni-user">
+            <img src="poto/habil.jpeg" alt="Foto Habil">
+            <div class="user-info">
+              <h4>Habil</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.2s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Sepatu sneakers saya jadi wangi dan fresh lagi. Hasilnya di luar ekspektasi!"</p>
+          <div class="testimoni-user">
+            <img src="poto/sela.jpeg" alt="Foto Rina">
+            <div class="user-info">
+              <h4>Rina</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.05s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Midsole treatment benar-benar bikin sepatu saya tampak baru. Worth it banget!"</p>
+          <div class="testimoni-user">
+            <img src="poto/okta.jpeg" alt="Foto Okta">
+            <div class="user-info">
+              <h4>Okta</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.1s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Saya suka banget hasilnya, detail cleaningnya rapi dan sepatu jadi lebih awet."</p>
+          <div class="testimoni-user">
+            <img src="poto/arbi.jpeg" alt="Foto Arbi">
+            <div class="user-info">
+              <h4>Arbi</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.15s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Sepatu suede saya jadi lebih terawat, warnanya kembali hidup. Recommended!"</p>
+          <div class="testimoni-user">
+            <img src="poto/aca.jpeg" alt="Foto Farhan">
+            <div class="user-info">
+              <h4>Farhan</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="testimoni-card reveal-on-scroll" style="transition-delay: 0.2s;">
+          <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+          <div class="testimoni-rating">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+          </div>
+          <p>"Proses cepat, tas saya bersih maksimal. Saya pasti akan order lagi!"</p>
+          <div class="testimoni-user">
+            <img src="poto/yumi.jpeg" alt="Foto Yanie">
+            <div class="user-info">
+              <h4>Yanie</h4>
+              <span>Pelanggan Setia</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SARAN DAN MASUKAN SECTION -->
+    <section class="feedback" id="feedback">
+      <div class="feedback-box reveal-on-scroll">
+        <div class="section-header">
+          <span class="section-tag">Masukan Anda</span>
+          <h2>Saran & Masukan</h2>
+          <p>Kami sangat menghargai saran Anda untuk terus meningkatkan kualitas pelayanan kami</p>
+        </div>
+        
+        <form id="feedback-form" class="feedback-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name"><i class="fas fa-user"></i> Nama</label>
+              <input type="text" id="name" name="name" placeholder="Masukkan nama Anda" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email"><i class="fas fa-envelope"></i> Email</label>
+              <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="message"><i class="fas fa-comment-dots"></i> Saran & Masukan</label>
+            <textarea id="message" name="message" rows="4" placeholder="Tuliskan saran atau masukan Anda di sini..." required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-feedback"><i class="fas fa-paper-plane"></i> Kirim Masukan</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <!-- Col 1: Brand -->
+      <div class="footer-col brand-col">
+        <div class="footer-brand">
+          <img src="poto/back_transparent.png" alt="diShoesin.id Logo" class="footer-logo-img">
+          <p>Layanan cuci sepatu, tas, dan helm premium dengan teknik profesional untuk menjaga barang kesayangan Anda tetap seperti baru.</p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/dishoesin.id?utm_source=qr&igsh=MWthcG90ZHF4enhidA==" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://wa.me/6283168783141" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.tiktok.com/@dishoesin.id?_r=1&_t=ZS-93vqkg8wFSJ" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+
+      <!-- Col 2: Navigation -->
+      <div class="footer-col links-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#price">Price List</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#testimoni">Testimonials</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Services & Open Hours -->
+      <div class="footer-col contact-col">
+        <h4>Operational Hours</h4>
+        <p class="footer-info-item"><i class="far fa-clock"></i> Setiap Hari: 08:00 - 20:00 WIB</p>
+        <p class="footer-info-item"><i class="fas fa-map-marker-alt"></i> Dilaundry'in Laundry Cikeas</p>
+        <p class="footer-info-item"><i class="fas fa-phone"></i> +62 831-6878-3141</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 diShoesin.id. All Rights Reserved.</p>
+      <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i> Back to Top</a>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    // Scroll Reveal Animation using Intersection Observer
+    document.addEventListener('DOMContentLoaded', () => {
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      
+      const observerOptions = {
+        root: null,
+        threshold: 0.08,
+        rootMargin: "0px 0px -40px 0px"
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Reveal once
+          }
+        });
+      }, observerOptions);
+
+      revealElements.forEach(el => {
+        revealObserver.observe(el);
+      });
+    });
+
+    // Responsive Navigation Menu Toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navMenu.classList.toggle('show');
+      menuToggle.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (navMenu.classList.contains('show')) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          navMenu.classList.remove('show');
+          menuToggle.classList.remove('active');
+        }
+      }
+    });
+
+    document.querySelectorAll('#nav-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('show');
+        menuToggle.classList.remove('active');
+      });
+    });
+
+    // Price Detail Modal Logic
+    function openModal(imageSrc) {
+      const modal = document.getElementById("priceModal");
+      const img = document.getElementById("priceImage");
+      img.src = imageSrc;
+      modal.style.display = "flex";
+      document.body.style.overflow = "hidden"; // Disable scroll when modal is open
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("priceModal");
+      modal.style.display = "none";
+      document.body.style.overflow = ""; // Re-enable scroll
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("priceModal");
+      if (event.target === modal || event.target.classList.contains('modal-wrapper')) {
+        closeModal();
+      }
+    }
+
+    // Mail Client Feedback Submission
+    const form = document.getElementById('feedback-form');
+    if (form) {
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        const subject = encodeURIComponent('Saran & Masukan diShoesin.id dari ' + (name || 'Pengunjung'));
+        const body = encodeURIComponent('Nama: ' + name + '\nEmail: ' + email + '\n\nSaran & Masukan:\n' + message);
+
+        const to = 'gangtasel@gmail.com';
+        const mailto = `mailto:${to}?subject=${subject}?body=${body}`;
+
+        window.location.href = mailto;
+      });
+    }
+  </script>
+</body>
+</html>
